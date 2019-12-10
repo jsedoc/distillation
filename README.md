@@ -6,10 +6,11 @@ Code for the paper: [Pareto-optimal data compression for binary classification t
 
 All our results can be computed starting with the parameters listedin Figure II, but to save time, you can instead start with the four files below, which each contain 
 two columns (w,F1), where F_1 = P(W<w|Y=1):
-  AnalyticF.csv
-  CIFARF.csv
-  FashionMNISTF.csv
-  MNISTF.csv
+ - AnalyticF.csv
+ - CIFARF.csv
+ - FashionMNISTF.csv
+ - MNISTF.csv
+
 After interpolating these curves, eq. (29) gives 
     F_2(w) = P(W<w|Y=2) = 1/2 - F_1(1-w), 
 after which the joint probability distribution P(Z,Y) can be rapidly 
@@ -36,6 +37,7 @@ The grid points H* for which this happens can be automatically dropped by
 exploiting the fact that both H and I should be a monotonically increasing 
 functions of H*. For example, here's Mathematica code function doing this:
 
+```
 dropBadLocalMinima2[results_] := Module[{res = {}, lastH = -666},
    Do[
     If[lastH != results[[i, 2]], lastH = results[[i, 2]]; 
@@ -49,6 +51,7 @@ dropBadLocalMinima1[results_, initialI_Real] :=
     If[lastI < results[[i, 3]], lastI = results[[i, 3]]; 
      AppendTo[res, results[[i]]]], {i, Length[results]}];
    dropBadLocalMinima2[res]];
+```
 
 If you have any questions about this, please email tegmark@mit.edu or tailin@mit.edu.
 :-)
