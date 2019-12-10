@@ -1,8 +1,8 @@
 # distillation
 
-Code for the paper: Pareto-optimal data compression for binary classification tasks, Max and Wu, 2019.
+Code for the paper: [Pareto-optimal data compression for binary classification tasks](https://arxiv.org/abs/1908.08961), Max and Wu, 2019.
 
-### Data files: ###
+## Data files
 
 All our results can be computed starting with the parameters listedin Figure II, but to save time, you can instead start with the four files below, which each contain 
 two columns (w,F1), where F_1 = P(W<w|Y=1):
@@ -23,7 +23,7 @@ interpolate to obtain the two functions F_1(f) and F_ss2(f),
 simply load and again compute
  P_ij = F_j(b_i) - F_j(b_{i-1}).
 
-### Code: ###
+## Code
 
 The Matlab code probvided solves the constrained optimization problem of
 maximizing I(Z,W) subject to the constraint that H<H*, 
@@ -60,3 +60,13 @@ dropBadLocalMinima[results_, initialI_Real] :=
      AppendTo[res, results[[i]]]], {i, Length[results]}];
    dropBadLocalMinima2[res]];
 
+## Citation
+If you compare with, build on, or use aspects of the distillation work, please cite the following:
+```
+@article{tegmark2019pareto,
+  title={Pareto-optimal data compression for binary classification tasks},
+  author={Tegmark, Max and Wu, Tailin},
+  journal={arXiv preprint arXiv:1908.08961},
+  year={2019}
+}
+```
