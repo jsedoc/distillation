@@ -1,6 +1,6 @@
 # distillation
 
-Code for the paper: [Pareto-optimal data compression for binary classification tasks](https://arxiv.org/abs/1908.08961), Max and Wu, 2019.
+Code for the paper "Pareto-optimal data compression for binary classification tasks" by Max Tegmark & Tailin Wu, 2019, [https://arxiv.org/abs/1908.08961](https://arxiv.org/abs/1908.08961)
 
 ## Data files
 
